@@ -1,9 +1,9 @@
 const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
 
-let URL = 'https://www.instagram.com/explore/tags/%EB%B3%B4%EC%84%B1%EC%97%AC%ED%96%89/'
+let BASE_URL = 'https://www.instagram.com/explore/tags/'
 
-async function run (){
+async function run (keyword){
 
     // 브라우저 열기
 	
@@ -13,7 +13,7 @@ async function run (){
     const page = await browser.newPage();  
 
 	// 웹사이트 로딩, 아래 주소에 원하는 페이지의 주소를 넣어주자
-    await page.goto(URL, {timeout: 0, waitUntil: 'domcontentloaded'});
+    await page.goto(BASE_URL + keyword, {timeout: 0, waitUntil: 'domcontentloaded'});
 	
 	 //스크린샷 캡쳐
 	 await page.screenshot({path: 'page_screenshot.png', fullPage:true});
