@@ -129,5 +129,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-API.json
+recognizer/API.json
 result/

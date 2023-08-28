@@ -23,8 +23,10 @@ async function extractNER(keyword, text) {
             }
         }
     });
-    fs.writeFileSync(`./result/${new Date().toString().substring(0, 10)}_${keyword}.json`, JSON.stringify(response.data));
-    return response.data;
+    const basename = `./result`;
+    const filename = `${new Date().toString().substring(0, 10)}_${keyword}.json`;
+    fs.writeFileSync(basename + filename, JSON.stringify(response.data));
+    return {file : response.data, filename : filename};
 }
 
 module.exports = {
