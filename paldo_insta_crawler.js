@@ -41,7 +41,6 @@ async function run (keyword){
 	  // 복사한 리스트의 Selector로 리스트를 모두 가져온다.
 	  const lists = $('._aabd._aa8k._al3l');
 
-
 	console.log("crawling result: ");
 		// 모든 리스트를 순환한다.
 		lists.each((index, list) => {
@@ -80,8 +79,8 @@ async function run (keyword){
 			console.log('\n\n\n');
 			result.push(curFeed);
 		});
-	  // 브라우저를 종료한다.
-	  browser.close();
+		// 브라우저를 종료한다.
+		browser.close();
 	return result;
 }
 
